@@ -8,7 +8,6 @@ import { ContactSection } from './components/ContactSection';
 import { CelestialSkyCanvas } from './components/CelestialSkyCanvas';
 import { LittleStarEntity } from './components/LittleStarEntity';
 import { MeditationModal } from './components/MeditationModal';
-import { FloatingModeDock } from './components/FloatingModeDock';
 import { PROFILE } from './data/portfolioData';
 import { ArrowUp, ArrowUpRight, Linkedin } from 'lucide-react';
 
@@ -137,13 +136,6 @@ export default function App() {
         {/* 5. Celestial Relay Station (Contact Form & Direct Channels) */}
         <ContactSection themeMode={themeMode} onPlayChime={playChime} />
       </main>
-
-      {/* Floating Bottom Mode Dock: Seamless Mode Switching from any scroll position */}
-      <FloatingModeDock 
-        themeMode={themeMode} 
-        onToggleTheme={toggleThemeMode} 
-        onPlayChime={playChime} 
-      />
 
       {/* Footer */}
       <footer className="border-t border-void-800/80 py-12 px-4 sm:px-8 font-mono text-xs text-zinc-600 relative z-10 bg-black">

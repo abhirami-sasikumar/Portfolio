@@ -75,6 +75,7 @@ export const Navbar = ({
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Dual-Mode Segmented Selector */}
             <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-zinc-950/90 border border-white/20 backdrop-blur-md shadow-inner text-[10px] sm:text-xs font-mono">
+              <span className="hidden xl:inline text-zinc-400 pl-2.5 pr-1 font-mono text-[10px] tracking-wider uppercase">PERSPECTIVE:</span>
               <button
                 onClick={() => {
                   if (themeMode !== 'techy') onToggleTheme();
@@ -224,6 +225,7 @@ export const Navbar = ({
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Dual-Mode Segmented Selector */}
           <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-zinc-950/90 border border-white/20 backdrop-blur-md shadow-inner text-[10px] sm:text-xs font-mono">
+            <span className="hidden xl:inline text-zinc-400 pl-2.5 pr-1 font-mono text-[10px] tracking-wider uppercase">PERSPECTIVE:</span>
             <button
               onClick={() => {
                 if (themeMode !== 'techy') onToggleTheme();

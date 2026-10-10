@@ -60,7 +60,7 @@ export const LittleStarEntity = ({ themeMode = 'celestial', onClick }) => {
             ? 'bg-black border border-emerald-500/60 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.4)]' 
             : 'bg-black/95 border border-white/30 text-white/90 shadow-starlight'
         }`}>
-          {isTechy ? '⚡ CORE ORBIT // THE LITTLE STAR' : '✦ THE LITTLE STAR [COMMUNE]'}
+          {isTechy ? 'CORE ORBIT // THE LITTLE STAR' : 'THE LITTLE STAR [COMMUNE]'}
         </div>
       </div>
     </div>
