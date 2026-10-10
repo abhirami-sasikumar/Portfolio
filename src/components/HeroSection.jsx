@@ -41,18 +41,89 @@ export const HeroSection = ({
           </span>
         </motion.div>
 
-        {/* Mode Switcher Pill */}
-        <button
-          onClick={onToggleTheme}
-          className="font-mono text-[11px] sm:text-xs text-zinc-400 hover:text-white flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-white/10 hover:border-white/30 transition-all bg-void-950/60"
-        >
-          <span>ACTIVE MODE:</span>
-          <span className="text-white font-bold underline decoration-white/40 underline-offset-4">
-            {isTechy ? 'TECH' : '✦ MY SPACE'}
-          </span>
-          <span className="text-zinc-500 text-[10px] hidden xs:inline">(Click to flip)</span>
-        </button>
+        {/* Top Segmented Mode Switcher */}
+        <div className="flex items-center p-0.5 sm:p-1 rounded-full border border-white/20 bg-void-950/80 backdrop-blur-md shadow-lg font-mono text-[10px] sm:text-xs">
+          <button
+            onClick={() => { if (!isTechy) onToggleTheme(); }}
+            className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 font-bold ${
+              isTechy 
+                ? 'bg-sky-400 text-black shadow-[0_0_12px_rgba(56,189,248,0.5)]' 
+                : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            <span>⚡</span>
+            <span>TECH</span>
+          </button>
+          <button
+            onClick={() => { if (isTechy) onToggleTheme(); }}
+            className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 font-bold ${
+              !isTechy 
+                ? 'bg-white text-black shadow-[0_0_14px_rgba(255,255,255,0.7)]' 
+                : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            <span>✦</span>
+            <span>MY SPACE</span>
+          </button>
+        </div>
       </div>
+
+      {/* Hero Dual-Perspective Discovery Banner */}
+      <motion.div 
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, delay: 0.1 }}
+        className={`mb-10 sm:mb-12 p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-500 backdrop-blur-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-4 ${
+          isTechy
+            ? 'bg-zinc-950/85 border-sky-400/30 shadow-[0_8px_30px_rgba(56,189,248,0.08)]'
+            : 'bg-void-950/85 border-white/20 shadow-[0_12px_35px_rgba(255,255,255,0.05)]'
+        }`}
+      >
+        <div className="flex items-center gap-3.5 w-full md:w-auto">
+          <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 border ${
+            isTechy 
+              ? 'bg-sky-400/10 border-sky-400/30 text-sky-400' 
+              : 'bg-white/10 border-white/30 text-white'
+          }`}>
+            <span className="text-lg">{isTechy ? '⚡' : '✦'}</span>
+          </div>
+          <div>
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>TWO INTERACTIVE WORLDS OF ABHIRAMI</span>
+            </div>
+            <p className="text-xs sm:text-sm text-zinc-200 mt-0.5 font-sans font-light">
+              {isTechy 
+                ? 'Currently in TECH Mode (Clean Architecture & API Matrices). Switch to explore the 3D Solar System & Literary Space!'
+                : 'Currently in MY SPACE Mode (3D Solar System & Philosophy). Switch to examine production system architecture & API specs!'}
+            </p>
+          </div>
+        </div>
+
+        {/* Action Toggle Inside Card */}
+        <div className="flex items-center p-1 rounded-full bg-black/90 border border-white/20 shrink-0 font-mono text-xs shadow-inner w-full md:w-auto justify-center">
+          <button
+            onClick={() => { if (!isTechy) onToggleTheme(); }}
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
+              isTechy 
+                ? 'bg-sky-400 text-black shadow-[0_0_14px_rgba(56,189,248,0.6)]' 
+                : 'text-zinc-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            <span>⚡ TECH MODE</span>
+          </button>
+          <button
+            onClick={() => { if (isTechy) onToggleTheme(); }}
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
+              !isTechy 
+                ? 'bg-white text-black shadow-[0_0_16px_rgba(255,255,255,0.7)]' 
+                : 'text-zinc-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            <span>✦ MY SPACE MODE</span>
+          </button>
+        </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
