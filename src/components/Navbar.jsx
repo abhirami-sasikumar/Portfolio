@@ -1,0 +1,267 @@
+import React, { useState } from 'react';
+import { 
+  Menu, 
+  X, 
+  ArrowUpRight
+} from 'lucide-react';
+import { PROFILE } from '../data/portfolioData';
+
+export const Navbar = ({ 
+  activeSection, 
+  onNavigate, 
+  onOpenMeditation,
+  themeMode,
+  onToggleTheme 
+}) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navItems = [
+    { id: 'home', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'expertise', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  if (themeMode === 'techy') {
+    /* =========================================================================
+       BEING TECHY: Executive Full-Stack Developer Console Header
+       Clean, structured, professional, spacious, and un-congested.
+       ========================================================================= */
+    return (
+      <header className="fixed top-0 inset-x-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-6">
+          
+          {/* Left: Professional Brand Identity */}
+          <a 
+            href="#home"
+            onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+            className="flex items-center gap-3.5 group"
+          >
+            <div className="w-9 h-9 rounded-lg border border-white/20 bg-zinc-950 flex items-center justify-center transition-all group-hover:border-sky-400 group-hover:shadow-[0_0_12px_rgba(56,189,248,0.25)]">
+              <span className="font-mono text-xs font-bold text-white tracking-wider">AS</span>
+            </div>
+            <div>
+              <span className="font-sans text-base font-bold text-white group-hover:text-sky-300 transition-colors tracking-tight block">
+                {PROFILE.name}
+              </span>
+              <span className="block text-xs font-mono text-zinc-400 mt-0.5">
+                Full-Stack Software Developer &bull; MERN &amp; Python
+              </span>
+            </div>
+          </a>
+
+          {/* Middle: Clean Desktop Navigation Menu */}
+          <nav className="hidden lg:flex items-center gap-1 font-sans text-sm">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => onNavigate(item.id)}
+                  className={`px-4 py-2 rounded-lg transition-all font-medium whitespace-nowrap ${
+                    isActive 
+                      ? 'bg-white/10 text-white font-semibold' 
+                      : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Right: Mode Switcher & Primary Action */}
+          <div className="flex items-center gap-3">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={onToggleTheme}
+              className="px-3 sm:px-4 py-2 rounded-lg text-xs font-mono font-medium border border-white/15 bg-zinc-950 text-zinc-300 hover:text-white hover:border-white/40 transition-all flex items-center gap-2"
+              title="Switch to My Space Theme"
+            >
+              <span className="hidden sm:inline text-zinc-400">MODE:</span>
+              <span className="font-bold text-white">TECH</span>
+              <span className="text-[10px] text-zinc-500 hidden md:inline">(Flip ✦)</span>
+            </button>
+
+            {/* Direct Contact Button */}
+            <a 
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+              className="px-4 sm:px-5 py-2.5 rounded-lg bg-white text-black text-xs font-mono font-bold tracking-wider hover:bg-zinc-200 transition-all flex items-center gap-1.5 shadow-sm"
+            >
+              <span>CONTACT ME</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+
+            {/* Mobile menu trigger */}
+            <button 
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle navigation"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+        </div>
+
+        {/* Mobile Dropdown for Being Techy */}
+        {mobileOpen && (
+          <div className="lg:hidden px-4 pb-6 pt-2 bg-black border-b border-white/10 space-y-2 font-sans text-sm">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  onNavigate(item.id);
+                  setMobileOpen(false);
+                }}
+                className="block w-full text-left text-zinc-300 hover:text-white py-2 px-3 rounded-lg hover:bg-white/5 font-medium transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+            <div className="pt-3 border-t border-zinc-800 flex justify-between items-center font-mono text-xs">
+              <span className="text-zinc-500">SWITCH THEME:</span>
+              <button
+                onClick={() => {
+                  onToggleTheme();
+                  setMobileOpen(false);
+                }}
+                className="px-3 py-1.5 rounded border border-white/20 text-white hover:bg-white/10"
+              >
+                ✦ MY SPACE MODE
+              </button>
+            </div>
+          </div>
+        )}
+      </header>
+    );
+  }
+
+  /* =========================================================================
+     CELESTIAL: Floating / Hanging Monochromatic Island Capsule
+     ========================================================================= */
+  return (
+    <div className="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+      {/* Floating / Hanging Capsule Island Navbar */}
+      <nav className="pointer-events-auto flex items-center justify-between gap-6 px-5 sm:px-6 py-2.5 rounded-full bg-black/75 backdrop-blur-2xl border border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.85)] max-w-5xl w-full transition-all duration-300 hover:border-white/25">
+        
+        {/* Brand identity: Monogram + Name */}
+        <a 
+          href="#home"
+          onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+          className="flex items-center gap-3 group"
+        >
+          <div className="w-8 h-8 rounded-full border border-white/30 group-hover:border-white flex items-center justify-center transition-all bg-void-950 text-white">
+            <span className="font-mono text-[11px] font-bold">AS</span>
+          </div>
+          <div className="hidden sm:block">
+            <span className="block font-sans text-sm sm:text-base font-bold text-white group-hover:text-zinc-200 transition-colors tracking-tight leading-tight">
+              {PROFILE.name}
+            </span>
+            <span className="block text-xs font-sans font-medium text-zinc-300 tracking-normal mt-0.5">
+              Full-Stack Developer
+            </span>
+          </div>
+        </a>
+
+        {/* Floating Menu Links */}
+        <div className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-void-900/80 border border-white/5 font-sans text-xs font-medium">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => onNavigate(item.id)}
+                className={`px-4 py-1.5 rounded-full transition-all whitespace-nowrap ${
+                  isActive 
+                    ? 'bg-white text-black font-semibold shadow-starlight' 
+                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Right Actions: Theme Toggle ("Celestial" <-> "Being Techy") & Contact Pill */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Theme Mode Toggle Button */}
+          <button
+            onClick={onToggleTheme}
+            className="px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-medium border border-white/30 bg-void-900/90 text-white hover:border-white hover:shadow-starlight transition-all duration-300 flex items-center gap-1.5"
+            title="Switch between My Space and Tech themes"
+          >
+            <span className="text-white text-xs">✦</span>
+            <span className="hidden sm:inline">THEME:</span>
+            <span className="tracking-wider">MY SPACE</span>
+          </button>
+
+          <a 
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+            className="px-3.5 sm:px-4 py-2 rounded-full bg-white text-black text-xs font-mono font-semibold tracking-wider hover:bg-zinc-200 hover:shadow-starlight transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+          >
+            <span>LET'S TALK</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+
+          {/* Mobile menu toggle */}
+          <button 
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+
+      </nav>
+
+      {/* Floating Mobile Drawer */}
+      {mobileOpen && (
+        <div className="pointer-events-auto absolute top-20 left-4 right-4 max-w-sm mx-auto p-5 rounded-3xl bg-black/95 backdrop-blur-2xl border border-white/20 shadow-2xl font-sans text-sm space-y-3">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                onNavigate(item.id);
+                setMobileOpen(false);
+              }}
+              className="block w-full text-left text-zinc-300 hover:text-white py-1.5 font-medium px-2 rounded-lg hover:bg-white/5 transition-colors"
+            >
+              {item.label}
+            </button>
+          ))}
+          <div className="pt-3 border-t border-void-800 flex flex-col gap-2 font-mono text-xs">
+            <button
+              onClick={() => {
+                onToggleTheme();
+                setMobileOpen(false);
+              }}
+              className="text-left text-zinc-300 hover:text-white px-2 py-1.5 rounded-lg bg-white/5 flex items-center justify-between"
+            >
+              <span>SWITCH THEME:</span>
+              <span className="font-bold text-white">
+                {themeMode === 'celestial' ? '✦ MY SPACE' : 'TECH'}
+              </span>
+            </button>
+            {themeMode === 'celestial' && (
+              <button
+                onClick={() => {
+                  onOpenMeditation();
+                  setMobileOpen(false);
+                }}
+                className="text-left text-zinc-400 hover:text-white px-2 py-1"
+              >
+                ✦ The Little Star Story
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
