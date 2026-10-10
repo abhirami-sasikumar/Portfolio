@@ -5,29 +5,31 @@ export const LittleStarEntity = ({ themeMode = 'celestial', onClick }) => {
   const isTechy = themeMode === 'techy';
 
   useEffect(() => {
-    let target = { x: window.innerWidth * 0.75, y: window.innerHeight * 0.35 };
-    let current = { ...target };
+    // Gentle free autonomous orbital floating in celestial space
+    // Placed gracefully in the upper right cosmos, slowly meandering like a living star
     let animId;
-
-    const handleMouseMove = (e) => {
-      target.x = e.clientX;
-      target.y = e.clientY;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
+    let t = 0;
 
     const step = () => {
-      // Celestial momentum & inertia follow
-      current.x += (target.x - current.x) * 0.045;
-      current.y += (target.y - current.y) * 0.045;
-      setPos({ x: current.x, y: current.y });
+      t += 0.008; // very gentle, serene pace
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      // Base resting anchor: comfortably in the upper-right ambient sky
+      const baseX = width * 0.82;
+      const baseY = height * 0.28;
+
+      // Smooth lissajous / harmonic wave floating
+      const x = baseX + Math.sin(t * 0.9) * 28 + Math.cos(t * 0.4) * 14;
+      const y = baseY + Math.cos(t * 0.7) * 22 + Math.sin(t * 0.3) * 10;
+
+      setPos({ x, y });
       animId = requestAnimationFrame(step);
     };
 
     animId = requestAnimationFrame(step);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animId);
     };
   }, []);
