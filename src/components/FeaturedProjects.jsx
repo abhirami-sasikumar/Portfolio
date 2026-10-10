@@ -489,11 +489,11 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
         >
           {/* Top Orbit Control Banner (in My Space mode) */}
           {!isTechy && (
-            <div className="p-4 sm:p-5 rounded-3xl border border-white/15 bg-void-950/85 backdrop-blur-md space-y-3.5">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
+            <div className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-white/15 bg-void-950/85 backdrop-blur-md space-y-3.5 w-full">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 w-full">
+                <div className="flex items-center gap-3 min-w-0">
                   <div 
-                    className="w-9 h-9 rounded-full border flex items-center justify-center shadow-lg transition-transform"
+                    className="w-9 h-9 rounded-full border flex items-center justify-center shadow-lg transition-transform shrink-0"
                     style={{
                       background: activeSelectedPlanet?.gradient || 'radial-gradient(circle at 35% 30%, #fff 0%, #64748b 100%)',
                       borderColor: activeSelectedPlanet?.accent || 'rgba(255,255,255,0.4)',
@@ -502,9 +502,9 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                   >
                     <Orbit className="w-4 h-4 text-white animate-spin" />
                   </div>
-                  <div className="font-mono text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="text-white font-semibold text-sm">
+                  <div className="font-mono text-xs min-w-0">
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                      <span className="text-white font-semibold text-xs sm:text-sm">
                         {activeSelectedPlanet ? `${activeSelectedPlanet.name.toUpperCase()} EXPANDED` : 'THE 7 WORLDS EXPANDED'}
                       </span>
                       {activeSelectedPlanet && (
@@ -513,13 +513,13 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                         </span>
                       )}
                     </div>
-                    <span className="text-zinc-400 text-[11px] font-sans">
+                    <span className="text-zinc-400 text-[10px] sm:text-[11px] font-sans block mt-0.5">
                       Click any planet below to immediately expand that particular project.
                     </span>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-2 font-mono text-xs">
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs w-full sm:w-auto">
                   {selectedPlanetId !== 'all' ? (
                     <button
                       onClick={showAllPlanets}
@@ -625,11 +625,11 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                   isTechy 
                     ? 'tech-panel tech-sheen border border-sky-500/20 hover:border-sky-400/70 shadow-[0_4px_25px_rgba(0,0,0,0.8)]' 
                     : 'astral-panel reticle-corner border border-white/10 hover:border-white/40'
-                } p-4 sm:p-7 rounded-2xl sm:rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start relative overflow-hidden cursor-pointer`}
+                } p-4 sm:p-7 rounded-2xl sm:rounded-3xl flex flex-col lg:grid lg:grid-cols-12 gap-5 sm:gap-6 items-stretch lg:items-start relative overflow-hidden cursor-pointer w-full`}
               >
                 
                 {/* Left Column: Details */}
-                <div className="lg:col-span-7 space-y-3">
+                <div className="w-full lg:col-span-7 space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 font-mono text-xs">
                     <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                       <span className="text-zinc-500 font-mono text-xs font-semibold">
@@ -761,7 +761,7 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                 </div>
 
               {/* Right Column: Visual Preview (Video or Image) */}
-              <div className="lg:col-span-5">
+              <div className="w-full lg:col-span-5">
                 <div className={`media-glow-frame rounded-2xl overflow-hidden border ${
                   isTechy ? 'border-sky-500/30 bg-zinc-950 group-hover/card:border-sky-400/60' : 'border-void-700 bg-black group-hover/card:border-white/30'
                 } shadow-2xl relative transition-all duration-300`}>
