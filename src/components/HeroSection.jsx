@@ -25,18 +25,18 @@ export const HeroSection = ({
   const isTechy = themeMode === 'techy';
 
   return (
-    <section id="home" className="relative max-w-7xl mx-auto px-4 sm:px-8 pt-28 sm:pt-36 pb-20 border-b border-void-800/80">
+    <section id="home" className="relative max-w-7xl mx-auto px-4 sm:px-8 pt-24 sm:pt-36 pb-16 sm:pb-20 border-b border-void-800/80">
       
       {/* Top Credential Tag & Mode Indicator */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-4 mb-6 sm:mb-8">
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-void-900/80 text-zinc-300 font-mono text-xs backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-white/20 bg-void-900/80 text-zinc-300 font-mono text-[11px] sm:text-xs backdrop-blur-md"
         >
-          <span className={`w-2 h-2 rounded-full ${isTechy ? 'bg-sky-400' : 'bg-white'} animate-pulse`}></span>
-          <span>
+          <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${isTechy ? 'bg-sky-400' : 'bg-white'} animate-pulse shrink-0`}></span>
+          <span className="truncate">
             {isTechy ? 'ENGINEERING APERTURE: ONLINE // FULL-STACK CORE' : 'SOLAR NUCLEUS // THE CORE STAR'}
           </span>
         </motion.div>
@@ -44,13 +44,13 @@ export const HeroSection = ({
         {/* Mode Switcher Pill */}
         <button
           onClick={onToggleTheme}
-          className="font-mono text-xs text-zinc-400 hover:text-white flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 hover:border-white/30 transition-all bg-void-950/60"
+          className="font-mono text-[11px] sm:text-xs text-zinc-400 hover:text-white flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-white/10 hover:border-white/30 transition-all bg-void-950/60"
         >
           <span>ACTIVE MODE:</span>
           <span className="text-white font-bold underline decoration-white/40 underline-offset-4">
             {isTechy ? 'TECH' : '✦ MY SPACE'}
           </span>
-          <span className="text-zinc-500 text-[10px]">(Click to flip)</span>
+          <span className="text-zinc-500 text-[10px] hidden xs:inline">(Click to flip)</span>
         </button>
       </div>
 
