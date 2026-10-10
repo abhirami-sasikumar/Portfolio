@@ -163,7 +163,7 @@ export const CoreExpertise = ({ themeMode = 'celestial', onPlayChime }) => {
           )}
         </div>
 
-        <h2 className={`text-3xl sm:text-5xl font-normal text-white tracking-tight ${
+        <h2 className={`text-2xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight ${
           isTechy ? 'font-sans font-bold' : 'font-serif'
         }`}>
           {isTechy ? 'Core Technologies & Technical Stack' : 'Knowledge Constellations & Celestial Stack'}

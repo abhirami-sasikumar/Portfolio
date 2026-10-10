@@ -53,8 +53,8 @@ export const PROJECTS = [
     role: "Backend Architecture & Deployment Lead",
     title: "IoT-Enabled Nemom Block Panchayat Software Dashboard",
     client: "ICFOSS",
-    video: "/nemomblock.webm",
-    image: "/nemom_dashboard.png",
+    video: "./nemomblock.webm",
+    image: "./nemom_dashboard.png",
     overview: "Production IoT & GIS telemetry platform. Led the backend architecture, schema design, and Docker deployment while assisting with frontend components. Dynamically bridges physical regional zones with real-time sensor streams.",
     highlights: [
       "Dynamic Multi-Datasource Management: Dynamically connects to multiple, independent InfluxDB instances with distinct hosts, organizations, buckets, and auth tokens.",
@@ -71,8 +71,8 @@ export const PROJECTS = [
     role: "System Architecture, Backend & Mobile Lead",
     title: "Open IoT Platform: Web Dashboard & Mobile Application (Version 2)",
     client: "ICFOSS",
-    video: "/OpenIotweb.webm",
-    image: "/openiot_v2_architecture.png",
+    video: "./OpenIotweb.webm",
+    image: "./openiot_v2_architecture.png",
     mediaTabs: [
       { id: "video", label: "Web Dashboard", icon: "📹", footerLeft: "Web Dashboard (Clusters & Users)", footerRight: "Stream Recording" },
       { id: "image", label: "Mobile App", icon: "📱", footerLeft: "Mobile App Architecture & UI", footerRight: "Cross-Platform UI" }
@@ -94,8 +94,8 @@ export const PROJECTS = [
     role: "Architecture, Backend Development & Deployment Lead",
     title: "IDRB Website and Backend CMS: Real-Time GIS & Telemetry Platform",
     client: "Irrigation Design & Research Board (Govt. of Kerala)",
-    video: "/IDRB.webm",
-    image: "/IDRB.png",
+    video: "./IDRB.webm",
+    image: "./IDRB.png",
     mediaTabs: [
       { id: "video", label: "Home Page", icon: "📹", footerLeft: "IDRB Public Portal Home Page", footerRight: "Stream Recording" },
       { id: "image", label: "Inner Page", icon: "📊", footerLeft: "GIS Telemetry & Analytics Dashboard", footerRight: "Inner Analytics" }
@@ -115,7 +115,7 @@ export const PROJECTS = [
     role: "System Architecture, Backend & Deployment Lead",
     title: "Soil Nutrient Analyser Mobile Application",
     client: "ICFOSS / Department of Agriculture",
-    image: "/soil_nutrient_flow.png",
+    image: "./soil_nutrient_flow.png",
     overview: "Cross-platform IoT mobile application built for agricultural officers. Designed the end-to-end system architecture, backend REST APIs, deployment pipelines, and frontend features. Enables secure officer authentication, farmer demographic profiling, offline draft management, multi-point IoT sensor sampling, and automated nutrient averaging.",
     highlights: [
       "User Authentication & Verification: Secure officer registration and login with OTP (One-Time Password) verification, password reset, profile management, and account deletion workflows.",
@@ -132,8 +132,8 @@ export const PROJECTS = [
     role: "System Architecture & Backend Engineering Lead",
     title: "A Custom Backend Content Management System & API Generator",
     client: "ICFOSS",
-    video: "/CMS.webm",
-    image: "/thettiyar_influxdb.png",
+    video: "./CMS.webm",
+    image: "./thettiyar_influxdb.png",
     overview: "Designed the end-to-end system architecture and engineered the backend to streamline telemetry and content delivery. Built dynamic REST API generation pipelines, project-wise device matrices, and robust data governance protocols.",
     highlights: [
       "Interactive Dashboard & Project-Wise Visualization: Centralized telemetry management interface providing project-wise metrics, real-time device health, and visual monitoring.",
@@ -151,8 +151,8 @@ export const PROJECTS = [
     role: "Full-Stack & Backend Modernization Lead",
     title: "ICFOSS Website Revamping & CMS Migration",
     client: "ICFOSS",
-    video: "/IcfossWebsite.webm",
-    image: "/icfoss_landing_cms.png",
+    video: "./IcfossWebsite.webm",
+    image: "./icfoss_landing_cms.png",
     overview: "Contributed to the full-stack revamping of the official ICFOSS institutional website and content management system. Modernized legacy PHP/Laravel architecture into a high-performance React and Node.js/Express ecosystem with MySQL, hardening web security and implementing fine-grained administrative controls.",
     highlights: [
       "Legacy Full-Stack Migration: Migrated legacy PHP/Laravel application to a modern full-stack architecture using React and Node.js/Express with MySQL, preserving database integrity.",
@@ -170,8 +170,8 @@ export const PROJECTS = [
     title: "Sarangi School of Music Web Platform",
     client: "Sarangi School of Music",
     link: "https://sarangischoolofmusic.in/",
-    video: "/MusicSchool.webm",
-    image: "/slis_portal.png",
+    video: "./MusicSchool.webm",
+    image: "./slis_portal.png",
     overview: "Production web platform engineered for Sarangi School of Music as a freelance initiative. Designed and developed the responsive interface, course curriculum showcases, admissions inquiry funnels, and performance media galleries.",
     highlights: [
       "Custom Brand & Responsive Experience: Crafted a modern, aesthetic web experience optimized for fluid cross-device browsing across desktop, tablets, and smartphones.",

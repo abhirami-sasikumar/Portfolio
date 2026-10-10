@@ -34,7 +34,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-emerald-500/40',
     accent: '#34d399',
     tag: 'GIS • IoT Telemetry',
-    image: '/nemom_dashboard.png',
+    image: './nemom_dashboard.png',
     hasRing: false,
     chime: 660,
   },
@@ -50,7 +50,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-sky-500/40',
     accent: '#38bdf8',
     tag: 'React Native & IoT',
-    image: '/openiot_v2_architecture.png',
+    image: './openiot_v2_architecture.png',
     hasRing: true,
     chime: 700,
   },
@@ -66,7 +66,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-blue-500/40',
     accent: '#60a5fa',
     tag: 'GIS River Basin',
-    image: '/IDRB.png',
+    image: './IDRB.png',
     hasRing: false,
     chime: 740,
   },
@@ -82,7 +82,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-amber-500/40',
     accent: '#f59e0b',
     tag: 'SNA • Soil Nutrient IoT',
-    image: '/soil_nutrient_flow.png',
+    image: './soil_nutrient_flow.png',
     hasRing: true,
     chime: 784,
   },
@@ -98,7 +98,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-purple-500/40',
     accent: '#c084fc',
     tag: 'Dynamic API Matrix',
-    image: '/thettiyar_influxdb.png',
+    image: './thettiyar_influxdb.png',
     hasRing: false,
     chime: 830,
   },
@@ -114,7 +114,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-teal-500/40',
     accent: '#2dd4bf',
     tag: 'Enterprise ICFOSS CMS',
-    image: '/icfoss_landing_cms.png',
+    image: './icfoss_landing_cms.png',
     hasRing: false,
     chime: 880,
   },
@@ -130,7 +130,7 @@ export const PROJECT_PLANETS = {
     borderColor: 'border-rose-500/40',
     accent: '#fb7185',
     tag: 'Music Academy Web',
-    image: '/slis_portal.png',
+    image: './slis_portal.png',
     hasRing: true,
     chime: 932,
   },
@@ -625,13 +625,13 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                   isTechy 
                     ? 'tech-panel tech-sheen border border-sky-500/20 hover:border-sky-400/70 shadow-[0_4px_25px_rgba(0,0,0,0.8)]' 
                     : 'astral-panel reticle-corner border border-white/10 hover:border-white/40'
-                } p-5 sm:p-7 rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative overflow-hidden cursor-pointer`}
+                } p-4 sm:p-7 rounded-2xl sm:rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start relative overflow-hidden cursor-pointer`}
               >
                 
                 {/* Left Column: Details */}
                 <div className="lg:col-span-7 space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
-                    <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 font-mono text-xs">
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                       <span className="text-zinc-500 font-mono text-xs font-semibold">
                         {isTechy ? `SYS_0${idx + 1} //` : `0${idx + 1} ✦`}
                       </span>
@@ -683,14 +683,14 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                   </div>
 
                   <h3 
-                    className={`text-2xl sm:text-3xl lg:text-4xl text-white font-normal transition-all duration-300 flex items-center justify-between group/title ${
+                    className={`text-xl sm:text-2xl lg:text-3xl text-white font-normal transition-all duration-300 flex items-start sm:items-center justify-between gap-2 group/title ${
                       isTechy 
                         ? 'font-sans font-bold tracking-tight group-hover/card:text-sky-300' 
                         : 'font-serif group-hover/card:text-zinc-100'
                     }`}
                   >
-                    <span>{project.title}</span>
-                    <ArrowUpRight className={`w-5 h-5 opacity-0 -translate-x-2 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-x-0 group-hover/card:translate-y-0 transition-all duration-300 shrink-0 ml-2 ${
+                    <span className="break-words">{project.title}</span>
+                    <ArrowUpRight className={`w-5 h-5 opacity-0 -translate-x-2 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-x-0 group-hover/card:translate-y-0 transition-all duration-300 shrink-0 ml-1 sm:ml-2 ${
                       isTechy ? 'text-sky-400' : 'text-white'
                     }`} />
                   </h3>
@@ -767,7 +767,7 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                 } shadow-2xl relative transition-all duration-300`}>
                   
                   {/* Console Header Bar */}
-                  <div className="px-3.5 py-2.5 bg-zinc-950/90 border-b border-white/10 flex items-center justify-between gap-2 text-[11px] font-mono">
+                  <div className="px-3 sm:px-3.5 py-2 sm:py-2.5 bg-zinc-950/90 border-b border-white/10 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] font-mono">
                     <div className="flex items-center gap-1.5 flex-shrink-0">
                       <div className="w-2.5 h-2.5 rounded-full bg-zinc-700 group-hover/card:bg-red-500/80 transition-colors"></div>
                       <div className={`w-2.5 h-2.5 rounded-full bg-zinc-700 ${isTechy ? 'group-hover/card:bg-sky-400/80' : 'group-hover/card:bg-yellow-500/80'} transition-colors`}></div>
@@ -781,7 +781,7 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
 
                     {/* Multi-Media Switcher Tabs (e.g. Open IoT, IDRB) */}
                     {project.mediaTabs ? (
-                      <div className="flex items-center gap-1 bg-black/90 p-0.5 rounded-lg border border-white/15 text-[10px]">
+                      <div className="flex items-center gap-1 bg-black/90 p-0.5 rounded-lg border border-white/15 text-[10px] overflow-x-auto max-w-full">
                         {project.mediaTabs.map((tab) => (
                           <button
                             key={tab.id}
@@ -790,7 +790,7 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
                               e.stopPropagation();
                               setActiveMediaTabs(prev => ({ ...prev, [project.id]: tab.id }));
                             }}
-                            className={`px-2.5 py-0.5 rounded font-mono transition-all flex items-center gap-1 ${
+                            className={`px-2 sm:px-2.5 py-0.5 rounded font-mono transition-all flex items-center gap-1 whitespace-nowrap ${
                               currentMediaTab === tab.id
                                 ? (isTechy ? 'bg-sky-500/25 text-sky-300 border border-sky-400/40 shadow-sm' : 'bg-white/20 text-white border border-white/30')
                                 : 'text-zinc-400 hover:text-white border border-transparent'
@@ -811,21 +811,26 @@ export const FeaturedProjects = ({ themeMode = 'celestial', onPlayChime }) => {
 
                   {/* Media Content */}
                   {currentMediaTab === 'video' && project.video ? (
-                    <div className="relative group/video bg-black flex items-center justify-center min-h-[220px]">
+                    <div className="relative group/video bg-black flex items-center justify-center min-h-[200px] sm:min-h-[220px]">
                       <video
                         key={project.video}
-                        src={project.video}
                         autoPlay
                         loop
                         muted
                         playsInline
                         controls
+                        preload="metadata"
                         onClick={(e) => e.stopPropagation()}
                         className="w-full h-auto object-cover max-h-[360px]"
-                      />
+                      >
+                        <source src={project.video} type="video/webm" />
+                        <source src={project.video.replace(/^\.\//, '')} type="video/webm" />
+                        Your browser does not support WebM video streaming.
+                      </video>
                       <div className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white flex items-center gap-1.5 pointer-events-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-                        <span>LIVE RECORDING</span>
+                        <span className="hidden xs:inline">LIVE RECORDING</span>
+                        <span className="xs:hidden">REC</span>
                       </div>
                     </div>
                   ) : (

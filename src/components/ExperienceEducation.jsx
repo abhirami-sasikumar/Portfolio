@@ -50,7 +50,7 @@ export const ExperienceEducation = ({ themeMode = 'celestial', onPlayChime }) =>
           )}
         </div>
 
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-5xl font-normal text-white tracking-tight sm:whitespace-nowrap ${
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-5xl font-normal text-white tracking-tight ${
           isTechy ? 'font-sans font-bold' : 'font-serif'
         }`}>
           {isTechy 
@@ -58,7 +58,7 @@ export const ExperienceEducation = ({ themeMode = 'celestial', onPlayChime }) =>
             : 'Orbital Trajectory & Academic Constellations'}
         </h2>
 
-        <p className="text-zinc-400 text-sm mt-3 font-sans font-light sm:whitespace-nowrap">
+        <p className="text-zinc-400 text-sm mt-3 font-sans font-light max-w-2xl mx-auto leading-relaxed">
           {isTechy
             ? 'From computer science foundations to engineering production software at ICFOSS.'
             : 'A journey across open-source research observatories, software flightpaths, and academic constellations.'}

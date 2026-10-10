@@ -109,7 +109,7 @@ Sent from portfolio`;
           )}
         </div>
 
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-5xl font-normal text-white tracking-tight sm:whitespace-nowrap ${
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-5xl font-normal text-white tracking-tight ${
           isTechy ? 'font-sans font-bold' : 'font-serif'
         }`}>
           {isTechy 
@@ -117,7 +117,7 @@ Sent from portfolio`;
             : "Celestial Relay Station & Mission Inquiries"}
         </h2>
 
-        <p className="text-zinc-400 text-sm mt-3 font-sans font-light sm:whitespace-nowrap">
+        <p className="text-zinc-400 text-sm mt-3 font-sans font-light max-w-2xl mx-auto leading-relaxed">
           {isTechy
             ? 'Open for full-stack engineering roles, architecture consultations, and technical collaborations.'
             : 'Transmitting across interstellar frequencies. Open for full-stack engineering roles, architecture consultations, and cosmic collaborations.'}
