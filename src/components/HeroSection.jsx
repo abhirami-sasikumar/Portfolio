@@ -99,7 +99,7 @@ export const HeroSection = ({
           {/* Techy Mode: Architecture & Full-Stack Core // My Space Mode: Poetic & Literary Space */}
           {isTechy ? (
             /* BEING TECHY: Direct Professional Engineering Overview */
-            <div className="p-6 rounded-2xl border-l-2 border-sky-400 bg-black border border-white/15 space-y-3 shadow-[0_0_25px_rgba(56,189,248,0.06)]">
+            <div className="p-6 rounded-2xl border-l-2 border-sky-400 bg-black border border-white/15 space-y-3.5 shadow-[0_0_25px_rgba(56,189,248,0.06)]">
               <div className="flex items-center justify-between font-mono text-[11px]">
                 <span className="uppercase tracking-widest text-sky-400 font-bold flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
@@ -112,30 +112,63 @@ export const HeroSection = ({
                 Building scalable web platforms, high-performance APIs, and cross-platform mobile apps.
               </h3>
 
+              {/* Core Signature Quote */}
+              <div className="p-3.5 rounded-xl border border-sky-400/25 bg-sky-950/25 font-serif italic text-sky-200 text-xs sm:text-sm flex items-start gap-2.5">
+                <span className="text-sky-400 text-sm leading-none shrink-0 mt-0.5">✦</span>
+                <p>
+                  "Crafting things in my own way with your need. Develop, Explore, Maintain. Love to repeat."
+                </p>
+              </div>
+
               <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-normal">
                 Specialized in end-to-end software development with modern <strong>React.js frontends</strong>, scalable <strong>Node.js and Python/Django backends</strong>, and native-grade <strong>React Native mobile applications</strong>. Focused on clean architecture, modular codebases, and reliable client deliverables.
               </p>
             </div>
           ) : (
-            /* MY SPACE: Poetic, Philosophical & Literary Developer Space */
-            <div className="p-7 sm:p-8 rounded-[2.8rem] border border-white/20 bg-void-950/85 backdrop-blur-xl space-y-3.5 relative overflow-hidden shadow-[0_12px_45px_rgba(255,255,255,0.05)]">
+            /* MY SPACE: The Little Star Commune & Core Philosophy */
+            <div className="p-7 sm:p-8 rounded-[2.8rem] border border-white/20 bg-void-950/85 backdrop-blur-xl space-y-4 relative overflow-hidden shadow-[0_12px_45px_rgba(255,255,255,0.06)]">
               <div className="flex items-center justify-between font-mono text-[11px] text-zinc-400">
                 <span className="uppercase tracking-widest text-white font-semibold flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                  <span>✦ IN THE SPACE, BEING THE LITTLE</span>
+                  <span>✦ IN THE SPACE, BEING THE LITTLE STAR</span>
                 </span>
                 <span className="text-zinc-300 font-mono text-[10px] px-3 py-1 rounded-full border border-white/15 bg-white/5">
-                  NOCTURNAL CORE
+                  COMMUNE MANIFESTO
                 </span>
               </div>
 
-              <p className="font-serif italic text-lg sm:text-2xl text-white font-normal leading-relaxed">
-                "In the space, being the little, but the shining one — A creator in literature just as in the world of code. Where philosophical depth meets the precision of software."
-              </p>
+              <h2 className="font-serif italic text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-snug">
+                "In the space, being the little star."
+              </h2>
 
-              <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed">
-                Weaving clean MERN web architectures, robust Python/Django backends, and intuitive React Native mobile experiences with the patience of an author and the analytical mind of an engineer. Always observing, always building, quietly exploring the unknown.
-              </p>
+              {/* Core Philosophy Signature Box */}
+              <div className="p-4 sm:p-5 rounded-2xl border border-white/25 bg-black/80 font-serif italic text-white text-sm sm:text-base shadow-[0_0_25px_rgba(255,255,255,0.06)] flex items-start gap-3">
+                <span className="text-white text-base sm:text-lg leading-none shrink-0 mt-0.5">✦</span>
+                <p className="leading-relaxed">
+                  "Crafting things in my own way with your need. Develop, Explore, Maintain. Love to repeat."
+                </p>
+              </div>
+
+              {/* Core Philosophy Narrative */}
+              <div className="space-y-3 text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed">
+                <p>
+                  The cosmos is vast beyond measure. It contains blazing supernovas, sweeping nebulas, and entire galaxies. Yet on the darkest night, when a traveler is looking across uncharted waters, it is often a steady, quiet little star that points true north.
+                </p>
+                <p>
+                  To me, engineering is not about generating loud spectacle. It is about being that steady star: writing reliable code that holds fast when systems surge, building interfaces that honor the user's attention, and finding deep fulfillment in tending to the craft every single day.
+                </p>
+              </div>
+
+              {/* Direct Commune Action */}
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 text-[11px] font-mono">
+                <span className="text-zinc-400">ABHIRAMI SASIKUMAR &bull; PERSONAL ESSENCE</span>
+                <button 
+                  onClick={onOpenMeditation}
+                  className="px-4 py-2 rounded-full border border-white/30 text-white hover:bg-white hover:text-black transition-all flex items-center gap-1.5 font-sans text-xs"
+                >
+                  <span>✦ COMMUNE WITH THE LITTLE STAR</span>
+                </button>
+              </div>
             </div>
           )}
 
@@ -303,16 +336,16 @@ export const HeroSection = ({
             {!isTechy ? (
               <button 
                 onClick={onOpenMeditation}
-                className="px-4 py-3.5 rounded-full border border-void-700 text-zinc-400 hover:text-white transition-all text-xs"
+                className="px-5 py-3.5 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(255,255,255,0.08)]"
               >
-                ✦ Celestial Story
+                <span>✦ COMMUNE WITH THE LITTLE STAR</span>
               </button>
             ) : (
               <button 
-                onClick={() => onNavigate('expertise')}
-                className="px-4 py-3.5 rounded-full border border-white/20 text-zinc-400 hover:text-white transition-all text-xs"
+                onClick={onOpenMeditation}
+                className="px-5 py-3.5 rounded-full border border-sky-400/30 text-sky-300 hover:bg-sky-400/10 transition-all text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(56,189,248,0.1)]"
               >
-                Full-Stack Matrix
+                <span>✦ THE LITTLE STAR PHILOSOPHY</span>
               </button>
             )}
           </div>

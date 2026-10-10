@@ -40,7 +40,7 @@ export const MeditationModal = ({ isOpen, onClose, onPulseStardust }) => {
         <div className="p-4 rounded-2xl bg-black border border-void-800 mb-6 flex items-center justify-between">
           <div>
             <span className="text-[10px] text-zinc-500 block uppercase">LITTLE STAR INERTIA ENGINE</span>
-            <span className="text-white font-semibold">Active &bull; Drifting beside your cursor</span>
+            <span className="text-white font-semibold">Active &bull; Drifting freely across the cosmos</span>
           </div>
           <button 
             onClick={onPulseStardust} 

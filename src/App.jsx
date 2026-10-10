@@ -6,6 +6,7 @@ import { CoreExpertise } from './components/CoreExpertise';
 import { ExperienceEducation } from './components/ExperienceEducation';
 import { ContactSection } from './components/ContactSection';
 import { CelestialSkyCanvas } from './components/CelestialSkyCanvas';
+import { LittleStarEntity } from './components/LittleStarEntity';
 import { MeditationModal } from './components/MeditationModal';
 import { PROFILE } from './data/portfolioData';
 import { ArrowUp, ArrowUpRight, Linkedin } from 'lucide-react';
@@ -74,7 +75,7 @@ export default function App() {
         themeMode === 'techy' ? 'tech-cockpit-grid' : 'celestial-grid'
       }`}></div>
 
-      {/* ONLY IN CELESTIAL MODE: Night Sky Canvas and Meditation Modal */}
+      {/* Celestial Night Sky Canvas & Autonomous Little Star in Celestial Mode */}
       {themeMode === 'celestial' && (
         <>
           <CelestialSkyCanvas 
@@ -82,13 +83,19 @@ export default function App() {
             onNavigateSection={scrollToSection}
             onPlayChime={playChime}
           />
-          <MeditationModal 
-            isOpen={meditationOpen} 
-            onClose={() => setMeditationOpen(false)}
-            onPulseStardust={() => playChime(1056, 0.3)}
-          />
+          <LittleStarEntity themeMode={themeMode} onClick={() => {
+            setMeditationOpen(true);
+            playChime(880, 0.2);
+          }} />
         </>
       )}
+
+      {/* Little Star Commune / Meditation Modal (Accessible in all modes) */}
+      <MeditationModal 
+        isOpen={meditationOpen} 
+        onClose={() => setMeditationOpen(false)}
+        onPulseStardust={() => playChime(1056, 0.3)}
+      />
 
       {/* Top Observatory Navigation Bar */}
       <Navbar 
