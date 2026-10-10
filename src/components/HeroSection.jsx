@@ -40,32 +40,6 @@ export const HeroSection = ({
             {isTechy ? 'ENGINEERING APERTURE: ONLINE // FULL-STACK CORE' : 'SOLAR NUCLEUS // THE CORE STAR'}
           </span>
         </motion.div>
-
-        {/* Top Segmented Mode Switcher */}
-        <div className="flex items-center p-0.5 sm:p-1 rounded-full border border-white/20 bg-void-950/80 backdrop-blur-md shadow-lg font-mono text-[10px] sm:text-xs">
-          <button
-            onClick={() => { if (!isTechy) onToggleTheme(); }}
-            className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 font-bold ${
-              isTechy 
-                ? 'bg-sky-400 text-black shadow-[0_0_12px_rgba(56,189,248,0.5)]' 
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            <span>⚡</span>
-            <span>TECH</span>
-          </button>
-          <button
-            onClick={() => { if (isTechy) onToggleTheme(); }}
-            className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 font-bold ${
-              !isTechy 
-                ? 'bg-white text-black shadow-[0_0_14px_rgba(255,255,255,0.7)]' 
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            <span>✦</span>
-            <span>MY SPACE</span>
-          </button>
-        </div>
       </div>
 
       {/* Hero Dual-Perspective Discovery Banner */}
@@ -85,7 +59,7 @@ export const HeroSection = ({
               ? 'bg-sky-400/10 border-sky-400/30 text-sky-400' 
               : 'bg-white/10 border-white/30 text-white'
           }`}>
-            <span className="text-lg">{isTechy ? '⚡' : '✦'}</span>
+            {isTechy ? <Terminal className="w-5 h-5 text-sky-400" /> : <Compass className="w-5 h-5 text-white" />}
           </div>
           <div>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-widest">
@@ -104,23 +78,23 @@ export const HeroSection = ({
         <div className="flex items-center p-1 rounded-full bg-black/90 border border-white/20 shrink-0 font-mono text-xs shadow-inner w-full md:w-auto justify-center">
           <button
             onClick={() => { if (!isTechy) onToggleTheme(); }}
-            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
+            className={`px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
               isTechy 
                 ? 'bg-sky-400 text-black shadow-[0_0_14px_rgba(56,189,248,0.6)]' 
                 : 'text-zinc-400 hover:text-white hover:bg-white/5'
             }`}
           >
-            <span>⚡ TECH MODE</span>
+            <span>TECH</span>
           </button>
           <button
             onClick={() => { if (isTechy) onToggleTheme(); }}
-            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
+            className={`px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold ${
               !isTechy 
                 ? 'bg-white text-black shadow-[0_0_16px_rgba(255,255,255,0.7)]' 
                 : 'text-zinc-400 hover:text-white hover:bg-white/5'
             }`}
           >
-            <span>✦ MY SPACE MODE</span>
+            <span>MY SPACE</span>
           </button>
         </div>
       </motion.div>

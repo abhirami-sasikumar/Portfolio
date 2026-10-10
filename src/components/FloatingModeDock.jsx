@@ -51,8 +51,8 @@ export const FloatingModeDock = ({
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
               <span>
                 {isTechy 
-                  ? '✦ Switch to My Space for 3D Planets & Night Sky!' 
-                  : '⚡ Switch to Tech for Engineering & System Specs!'}
+                  ? 'Switch to My Space for 3D Planets & Night Sky!' 
+                  : 'Switch to Tech for Engineering & System Specs!'}
               </span>
               <button 
                 onClick={() => setShowHint(false)} 
@@ -109,7 +109,7 @@ export const FloatingModeDock = ({
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
-            <span>✦ MY SPACE</span>
+            <span>MY SPACE</span>
           </button>
 
         </div>

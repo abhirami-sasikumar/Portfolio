@@ -79,28 +79,26 @@ export const Navbar = ({
                 onClick={() => {
                   if (themeMode !== 'techy') onToggleTheme();
                 }}
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1 sm:gap-1.5 ${
+                className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                   themeMode === 'techy'
                     ? 'bg-sky-400 text-black font-bold shadow-[0_0_12px_rgba(56,189,248,0.5)]'
                     : 'text-zinc-400 hover:text-white'
                 }`}
                 title="Switch to Tech Mode"
               >
-                <span>⚡</span>
                 <span>TECH</span>
               </button>
               <button
                 onClick={() => {
                   if (themeMode !== 'celestial') onToggleTheme();
                 }}
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1 sm:gap-1.5 ${
+                className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                   themeMode === 'celestial'
                     ? 'bg-white text-black font-bold shadow-[0_0_14px_rgba(255,255,255,0.7)]'
                     : 'text-zinc-400 hover:text-white'
                 }`}
                 title="Switch to My Space Mode"
               >
-                <span>✦</span>
                 <span className="whitespace-nowrap">MY SPACE</span>
               </button>
             </div>
@@ -150,22 +148,22 @@ export const Navbar = ({
                     if (themeMode !== 'techy') onToggleTheme();
                     setMobileOpen(false);
                   }}
-                  className={`px-2.5 py-1 rounded-full text-[10px] ${
-                    themeMode === 'techy' ? 'bg-sky-400 text-black font-bold' : 'text-zinc-400'
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                    themeMode === 'techy' ? 'bg-sky-400 text-black' : 'text-zinc-400'
                   }`}
                 >
-                  ⚡ TECH
+                  TECH
                 </button>
                 <button
                   onClick={() => {
                     if (themeMode !== 'celestial') onToggleTheme();
                     setMobileOpen(false);
                   }}
-                  className={`px-2.5 py-1 rounded-full text-[10px] ${
-                    themeMode === 'celestial' ? 'bg-white text-black font-bold' : 'text-zinc-400'
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                    themeMode === 'celestial' ? 'bg-white text-black' : 'text-zinc-400'
                   }`}
                 >
-                  ✦ MY SPACE
+                  MY SPACE
                 </button>
               </div>
             </div>
@@ -230,28 +228,26 @@ export const Navbar = ({
               onClick={() => {
                 if (themeMode !== 'techy') onToggleTheme();
               }}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1 sm:gap-1.5 ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                 themeMode === 'techy'
                   ? 'bg-sky-400 text-black font-bold shadow-[0_0_12px_rgba(56,189,248,0.5)]'
                   : 'text-zinc-400 hover:text-white'
               }`}
               title="Switch to Tech Mode"
             >
-              <span>⚡</span>
               <span>TECH</span>
             </button>
             <button
               onClick={() => {
                 if (themeMode !== 'celestial') onToggleTheme();
               }}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center gap-1 sm:gap-1.5 ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                 themeMode === 'celestial'
                   ? 'bg-white text-black font-bold shadow-[0_0_14px_rgba(255,255,255,0.7)]'
                   : 'text-zinc-400 hover:text-white'
               }`}
               title="Switch to My Space Mode"
             >
-              <span>✦</span>
               <span className="whitespace-nowrap">MY SPACE</span>
             </button>
           </div>
@@ -300,22 +296,22 @@ export const Navbar = ({
                   if (themeMode !== 'techy') onToggleTheme();
                   setMobileOpen(false);
                 }}
-                className={`px-2.5 py-1 rounded-full text-[10px] ${
-                  themeMode === 'techy' ? 'bg-sky-400 text-black font-bold' : 'text-zinc-400'
+                className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                  themeMode === 'techy' ? 'bg-sky-400 text-black' : 'text-zinc-400'
                 }`}
               >
-                ⚡ TECH
+                TECH
               </button>
               <button
                 onClick={() => {
                   if (themeMode !== 'celestial') onToggleTheme();
                   setMobileOpen(false);
                 }}
-                className={`px-2.5 py-1 rounded-full text-[10px] ${
-                  themeMode === 'celestial' ? 'bg-white text-black font-bold' : 'text-zinc-400'
+                className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                  themeMode === 'celestial' ? 'bg-white text-black' : 'text-zinc-400'
                 }`}
               >
-                ✦ MY SPACE
+                MY SPACE
               </button>
             </div>
           </div>
