@@ -170,15 +170,15 @@ export const HeroSection = ({
               </p>
             </div>
           ) : (
-            /* MY SPACE: The Little Star Commune & Core Philosophy */
+            /* MY SPACE: The Little Star Core Philosophy */
             <div className="p-7 sm:p-8 rounded-[2.8rem] border border-white/20 bg-void-950/85 backdrop-blur-xl space-y-4 relative overflow-hidden shadow-[0_12px_45px_rgba(255,255,255,0.06)]">
               <div className="flex items-center justify-between font-mono text-[11px] text-zinc-400">
                 <span className="uppercase tracking-widest text-white font-semibold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-white"></span>
                   <span>✦ IN THE SPACE, BEING THE LITTLE STAR</span>
                 </span>
                 <span className="text-zinc-300 font-mono text-[10px] px-3 py-1 rounded-full border border-white/15 bg-white/5">
-                  COMMUNE MANIFESTO
+                  CORE MANIFESTO
                 </span>
               </div>
 
@@ -204,15 +204,10 @@ export const HeroSection = ({
                 </p>
               </div>
 
-              {/* Direct Commune Action */}
+              {/* Signature Card Footer */}
               <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 text-[11px] font-mono">
                 <span className="text-zinc-400">ABHIRAMI SASIKUMAR &bull; PERSONAL ESSENCE</span>
-                <button 
-                  onClick={onOpenMeditation}
-                  className="px-4 py-2 rounded-full border border-white/30 text-white hover:bg-white hover:text-black transition-all flex items-center gap-1.5 font-sans text-xs"
-                >
-                  <span>✦ COMMUNE WITH THE LITTLE STAR</span>
-                </button>
+                <span className="text-zinc-400 text-[10px] tracking-wider">DEVELOP &bull; EXPLORE &bull; MAINTAIN</span>
               </div>
             </div>
           )}
@@ -381,16 +376,16 @@ export const HeroSection = ({
             {!isTechy ? (
               <button 
                 onClick={onOpenMeditation}
-                className="px-5 py-3.5 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(255,255,255,0.08)]"
+                className="px-5 py-3.5 rounded-full border border-white/20 text-zinc-300 hover:text-white hover:border-white transition-all text-xs flex items-center gap-1.5"
               >
-                <span>✦ COMMUNE WITH THE LITTLE STAR</span>
+                <span>Celestial Story</span>
               </button>
             ) : (
               <button 
-                onClick={onOpenMeditation}
-                className="px-5 py-3.5 rounded-full border border-sky-400/30 text-sky-300 hover:bg-sky-400/10 transition-all text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(56,189,248,0.1)]"
+                onClick={() => onNavigate('expertise')}
+                className="px-5 py-3.5 rounded-full border border-white/20 text-zinc-400 hover:text-white transition-all text-xs"
               >
-                <span>✦ THE LITTLE STAR PHILOSOPHY</span>
+                Full-Stack Matrix
               </button>
             )}
           </div>

@@ -39,7 +39,7 @@ export const LittleStarEntity = ({ themeMode = 'celestial', onClick }) => {
       onClick={onClick}
       style={{ left: `${pos.x}px`, top: `${pos.y}px` }}
       className="fixed z-40 -translate-x-1/2 -translate-y-1/2 cursor-pointer group pointer-events-auto"
-      title="In the space, being the little star — Click to commune"
+      title="In the space, being the little star"
     >
       <div className="relative flex items-center justify-center">
         {/* Pulsing radiating halo */}
@@ -60,7 +60,7 @@ export const LittleStarEntity = ({ themeMode = 'celestial', onClick }) => {
             ? 'bg-black border border-emerald-500/60 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.4)]' 
             : 'bg-black/95 border border-white/30 text-white/90 shadow-starlight'
         }`}>
-          {isTechy ? 'CORE ORBIT // THE LITTLE STAR' : 'THE LITTLE STAR [COMMUNE]'}
+          {isTechy ? 'CORE ORBIT // THE LITTLE STAR' : 'THE LITTLE STAR'}
         </div>
       </div>
     </div>
