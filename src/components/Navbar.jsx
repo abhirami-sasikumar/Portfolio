@@ -71,39 +71,8 @@ export const Navbar = ({
             })}
           </nav>
 
-          {/* Right: Mode Switcher & Primary Action */}
+          {/* Right: Primary Action */}
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-            {/* Dual-Mode Segmented Selector */}
-            <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-zinc-950/90 border border-white/20 backdrop-blur-md shadow-inner text-[10px] sm:text-xs font-mono">
-              <span className="hidden xl:inline text-zinc-400 pl-2.5 pr-1 font-mono text-[10px] tracking-wider uppercase">PERSPECTIVE:</span>
-              <button
-                onClick={() => {
-                  if (themeMode !== 'techy') onToggleTheme();
-                }}
-                className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
-                  themeMode === 'techy'
-                    ? 'bg-sky-400 text-black font-bold shadow-[0_0_12px_rgba(56,189,248,0.5)]'
-                    : 'text-zinc-400 hover:text-white'
-                }`}
-                title="Switch to Tech Mode"
-              >
-                <span>TECH</span>
-              </button>
-              <button
-                onClick={() => {
-                  if (themeMode !== 'celestial') onToggleTheme();
-                }}
-                className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
-                  themeMode === 'celestial'
-                    ? 'bg-white text-black font-bold shadow-[0_0_14px_rgba(255,255,255,0.7)]'
-                    : 'text-zinc-400 hover:text-white'
-                }`}
-                title="Switch to My Space Mode"
-              >
-                <span className="whitespace-nowrap">MY SPACE</span>
-              </button>
-            </div>
-
             {/* Direct Contact Button */}
             <a 
               href="#contact"
@@ -141,33 +110,6 @@ export const Navbar = ({
                 {item.label}
               </button>
             ))}
-            <div className="pt-3 border-t border-zinc-800 flex justify-between items-center font-mono text-xs">
-              <span className="text-zinc-500">PERSPECTIVE:</span>
-              <div className="flex items-center p-0.5 rounded-full bg-zinc-900 border border-white/20">
-                <button
-                  onClick={() => {
-                    if (themeMode !== 'techy') onToggleTheme();
-                    setMobileOpen(false);
-                  }}
-                  className={`px-3 py-1 rounded-full text-[10px] font-bold ${
-                    themeMode === 'techy' ? 'bg-sky-400 text-black' : 'text-zinc-400'
-                  }`}
-                >
-                  TECH
-                </button>
-                <button
-                  onClick={() => {
-                    if (themeMode !== 'celestial') onToggleTheme();
-                    setMobileOpen(false);
-                  }}
-                  className={`px-3 py-1 rounded-full text-[10px] font-bold ${
-                    themeMode === 'celestial' ? 'bg-white text-black' : 'text-zinc-400'
-                  }`}
-                >
-                  MY SPACE
-                </button>
-              </div>
-            </div>
           </div>
         )}
       </header>
@@ -221,39 +163,8 @@ export const Navbar = ({
           })}
         </div>
 
-        {/* Right Actions: Theme Toggle ("Celestial" <-> "Being Techy") & Contact Pill */}
+        {/* Right Actions: Contact Pill */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-          {/* Dual-Mode Segmented Selector */}
-          <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-zinc-950/90 border border-white/20 backdrop-blur-md shadow-inner text-[10px] sm:text-xs font-mono">
-            <span className="hidden xl:inline text-zinc-400 pl-2.5 pr-1 font-mono text-[10px] tracking-wider uppercase">PERSPECTIVE:</span>
-            <button
-              onClick={() => {
-                if (themeMode !== 'techy') onToggleTheme();
-              }}
-              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
-                themeMode === 'techy'
-                  ? 'bg-sky-400 text-black font-bold shadow-[0_0_12px_rgba(56,189,248,0.5)]'
-                  : 'text-zinc-400 hover:text-white'
-              }`}
-              title="Switch to Tech Mode"
-            >
-              <span>TECH</span>
-            </button>
-            <button
-              onClick={() => {
-                if (themeMode !== 'celestial') onToggleTheme();
-              }}
-              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
-                themeMode === 'celestial'
-                  ? 'bg-white text-black font-bold shadow-[0_0_14px_rgba(255,255,255,0.7)]'
-                  : 'text-zinc-400 hover:text-white'
-              }`}
-              title="Switch to My Space Mode"
-            >
-              <span className="whitespace-nowrap">MY SPACE</span>
-            </button>
-          </div>
-
           <a 
             href="#contact"
             onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
@@ -290,33 +201,6 @@ export const Navbar = ({
               {item.label}
             </button>
           ))}
-          <div className="pt-3 border-t border-void-800 flex justify-between items-center font-mono text-xs">
-            <span className="text-zinc-500">PERSPECTIVE:</span>
-            <div className="flex items-center p-0.5 rounded-full bg-zinc-900 border border-white/20">
-              <button
-                onClick={() => {
-                  if (themeMode !== 'techy') onToggleTheme();
-                  setMobileOpen(false);
-                }}
-                className={`px-3 py-1 rounded-full text-[10px] font-bold ${
-                  themeMode === 'techy' ? 'bg-sky-400 text-black' : 'text-zinc-400'
-                }`}
-              >
-                TECH
-              </button>
-              <button
-                onClick={() => {
-                  if (themeMode !== 'celestial') onToggleTheme();
-                  setMobileOpen(false);
-                }}
-                className={`px-3 py-1 rounded-full text-[10px] font-bold ${
-                  themeMode === 'celestial' ? 'bg-white text-black' : 'text-zinc-400'
-                }`}
-              >
-                MY SPACE
-              </button>
-            </div>
-          </div>
           {themeMode === 'celestial' && (
             <button
               onClick={() => {

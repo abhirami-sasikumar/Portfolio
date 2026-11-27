@@ -199,7 +199,7 @@ export const SKILLS_LIST = [
   },
   {
     category: "Databases & DevOps",
-    skills: ["MongoDB", "MySQL", "PostgreSQL", "Docker", "Git & GitHub", "Linux / VM Management", "Database Migration", "Postman"]
+    skills: ["MongoDB", "MySQL", "PostgreSQL", "Docker", "Git & GitHub", "Linux / VM Management", "Database Migration", "Nginx"]
   }
 ];
 
