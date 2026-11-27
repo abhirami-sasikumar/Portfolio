@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { FeaturedProjects } from './components/FeaturedProjects';
@@ -11,15 +11,43 @@ import { MeditationModal } from './components/MeditationModal';
 import { PROFILE } from './data/portfolioData';
 import { ArrowUp, ArrowUpRight, Linkedin } from 'lucide-react';
 
+const TECH_SITE_URL = 'https://abhirami-sasikumar.github.io/Portfolio/';
+const MYSPACE_SITE_URL = 'https://abhirami-sasikumar.github.io/my-space/';
+
+const getInitialThemeMode = () => {
+  const envMode = import.meta.env.VITE_SITE_MODE;
+  if (envMode === 'techy' || envMode === 'celestial') {
+    return envMode;
+  }
+  if (typeof window !== 'undefined') {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('my-space')) {
+      return 'celestial';
+    }
+  }
+  return 'techy';
+};
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [meditationOpen, setMeditationOpen] = useState(false);
   const [isAudioMuted, setIsAudioMuted] = useState(true);
-  // Two distinct theme modes: 'celestial' (In the space being the little) <-> 'techy' (Being Techy)
-  const [themeMode, setThemeMode] = useState('celestial');
+  // Two distinct hosted experiences: 'techy' (/Portfolio) <-> 'celestial' (/my-space)
+  const [themeMode, setThemeMode] = useState(getInitialThemeMode);
+
+  useEffect(() => {
+    document.title =
+      themeMode === 'techy'
+        ? 'Abhirami Sasikumar | Full-Stack Software Developer'
+        : 'Abhirami Sasikumar — My Space | In the space, being the little star';
+  }, [themeMode]);
 
   const toggleThemeMode = () => {
     const nextMode = themeMode === 'celestial' ? 'techy' : 'celestial';
+    if (typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')) {
+      window.location.href = nextMode === 'celestial' ? MYSPACE_SITE_URL : TECH_SITE_URL;
+      return;
+    }
     setThemeMode(nextMode);
     playChime(nextMode === 'techy' ? 784 : 528, 0.25);
   };

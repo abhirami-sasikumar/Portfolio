@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:tech": "VITE_SITE_MODE=techy vite build --outDir dist",
+    "build:myspace": "VITE_SITE_MODE=celestial vite build --outDir dist-myspace",
     "preview": "vite preview"
   },
   "dependencies": {
