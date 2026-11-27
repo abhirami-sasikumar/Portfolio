@@ -2,7 +2,7 @@ export const PROFILE = {
   name: "Abhirami Sasikumar",
   role: "Full-Stack Software Developer",
   tagline: "Specializing in MERN Stack, Python/Django Backends, and React Native Mobile Apps.",
-  email: "abhiramisindhusasikumar@gmail.com",
+  email: "abhiramiabhiramam1@gmail.com",
   phone: "+91 8590632019",
   linkedin: "https://www.linkedin.com/in/abhirami-sasikumar-",
   github: "https://github.com",
